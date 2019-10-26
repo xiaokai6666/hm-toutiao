@@ -7,17 +7,22 @@
         alt
       />
 
-      <el-form ref="form" label-width="80px">
-        <el-input v-model="loginForm.mobile" style="margin-bottom:30px" placeholder="请输入手机号"></el-input>
-        <el-input
-          v-model="loginForm.cade"
-          style="width:230px; margin-right:15px;margin-bottom:30px"
-          placeholder="请输入验证码"
-        ></el-input>
-        <el-button type="primary">获取验证码</el-button>
-        <el-checkbox :value="true" style="margin-bottom:30px">我已阅读并同意用户协议和隐私条款</el-checkbox>
-
-        <el-form-item style="margin:0;">
+      <el-form ref="form" :model="loginForm">
+        <el-form-item>
+          <el-input v-model="loginForm.mobile" placeholder="请输入手机号"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-input
+            v-model="loginForm.code"
+            style="width:235px;margin-right:10px"
+            placeholder="请输入验证码"
+          ></el-input>
+          <el-button>发送验证码</el-button>
+        </el-form-item>
+        <el-form-item>
+          <el-checkbox :value="true">我已阅读并同意用户协议和隐私条款</el-checkbox>
+        </el-form-item>
+        <el-form-item>
           <el-button type="primary" style="width:100%">立即登录</el-button>
         </el-form-item>
       </el-form>
